@@ -62,9 +62,9 @@ abstract class WordRoomDatabase extends RoomDatabase {
      * Override the onCreate method to populate the database.
      * For this sample, we clear the database every time it is created.
      */
-    private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
+    private static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {  // TODO advised
             super.onCreate(db);
 
             databaseWriteExecutor.execute(() -> {
